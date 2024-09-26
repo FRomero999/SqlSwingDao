@@ -11,4 +11,8 @@ public class Game implements Serializable {
     private String description;
     private String platform;
     private Integer year;
+
+    public Object[] toArrayObj() {
+        return new Object[]{id, title, platform, year, description};
+    }
 }
