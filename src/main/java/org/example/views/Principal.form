@@ -10,7 +10,7 @@
       <scrollpane id="fa175">
         <constraints border-constraint="Center"/>
         <properties/>
-        <border type="none"/>
+        <border type="none" title="hhhg"/>
         <children>
           <component id="ddc66" class="javax.swing.JTable" binding="table1" default-binding="true">
             <constraints/>

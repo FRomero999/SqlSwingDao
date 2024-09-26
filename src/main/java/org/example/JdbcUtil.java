@@ -11,7 +11,7 @@ public class JdbcUtil {
     static {
         String url = "jdbc:mysql://localhost:3306/ad";
         String user = "root";
-        String password = "pwd";
+        String password = System.getenv("MYSQL_ROOT_PASSWORD");
         try {
             connection = DriverManager.getConnection(url,user,password);
         } catch (SQLException e) {

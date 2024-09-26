@@ -3,18 +3,26 @@ package org.example.dao;
 import org.example.JdbcUtil;
 import org.example.models.Game;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameDAO implements DAO<Game>{
+
+    private static Connection connection = null;
+
+    public GameDAO(Connection c){
+        connection = c;
+    }
+
     @Override
     public List<Game> findAll() {
         var salida = new ArrayList<Game>();
 
         try {
-            var st = JdbcUtil.getConnection().createStatement();
+            var st = connection.createStatement();
             ResultSet rs = st.executeQuery("select * from games");
             while (rs.next()) {
                 Game game = new Game();
